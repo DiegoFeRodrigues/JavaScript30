@@ -60,6 +60,9 @@
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+      console.log("\nSoma idades: \n");
+      const somaIdades = inventors.reduce((soma, atual) => soma + (atual.passed - atual.year), 0);
+      console.log(somaIdades);
 
     // 5. Sort the inventors by years lived
 
