@@ -65,6 +65,23 @@
       console.log(somaIdades);
 
     // 5. Sort the inventors by years lived
+      console.log("\nAnos vividos: \n");
+      const anosVividos = inventors.sort((inv1, inv2) => ((inv1.passed - inv1.year ) - (inv2.passed - inv2.year))).reverse();
+      console.table(anosVividos);
+
+      // js30:
+        const vividos = inventors.sort(function (inv1, inv2) {
+          const ultimo = inv1.passed - inv1.year;
+          const proximo = inv2.passed - inv2.year;
+          if (ultimo > proximo) {
+            return -1
+          }
+          return 1
+          // bloco if else (linhas 76 a 79) também poderia ser:
+            // return ultimo > proximo ? -1 : 1;
+        });
+
+        console.table(vividos);
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
