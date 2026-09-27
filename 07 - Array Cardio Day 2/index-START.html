@@ -27,8 +27,16 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
-    // Array.prototype.every() // is everyone 19 or older?
+      const anoAtual = new Date().getFullYear();
 
+      const maior19 = people.some(pessoa => anoAtual - pessoa.year >= 19);
+      console.log(maior19);
+
+      // js30:
+        const maior = people.some(pessoa => (new Date()).getFullYear() - pessoa.year >= 19);
+        console.log({maior});
+
+   // Array.prototype.every() // is everyone 19 or older?
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
