@@ -117,6 +117,16 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+      console.log("Somando aparições de palavras:");
+      const somaAparicao = data.reduce(function(soma, atual) {
+        if (!soma[atual]) {
+          soma[atual] = 0;
+        }
+        soma[atual]++;
+        return soma;
+      }, {});
+      console.table(somaAparicao);
+
   </script>
 </body>
 </html>
