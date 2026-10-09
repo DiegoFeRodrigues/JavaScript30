@@ -56,7 +56,29 @@
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+      console.log("Deletando comentário com id = 823423");
 
+      console.log("Array original:");
+      console.table(comments);
+
+      comments.splice(comments.findIndex(com => com.id == idProcurado), 1);
+
+      console.log("Array novo:");
+      console.table(comments);
+
+      // js30 - criando novo array:
+        console.log("js30:");
+        const indice = comments.findIndex(com => com.id === idProcurado);
+        const novaLista = [
+          ...comments.slice(0, indice),
+          ...comments.slice(indice + 1)
+        ];
+
+        console.log("Array original js30:");
+        console.table(comments);
+
+        console.log("Array novo js30:");
+        console.table(novaLista);
   </script>
 </body>
 </html>
